@@ -24,6 +24,7 @@ namespace WPF_Panels
 
         private DontClickMeWindow dontClickMeWindow;
         private LoginWindow loginWindow;
+        private HintWindow hintWindow;
 
         public MainWindow()
         {
@@ -69,9 +70,14 @@ namespace WPF_Panels
         //Login methods
         private void Button_Login(object sender, RoutedEventArgs e)
         {
-            loginWindow = new LoginWindow();
-
-            // to be continued
+            loginWindow = new LoginWindow(this);
+            loginWindow.Show();
+        }
+        //Hint methods
+        private void Button_Hint(object sender, RoutedEventArgs e)
+        {
+            hintWindow = new HintWindow();
+            hintWindow.Show();
         }
     }
 }

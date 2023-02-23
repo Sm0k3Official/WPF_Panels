@@ -18,8 +18,10 @@
         </Grid.RowDefinitions>
         <TextBlock VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="30" Text="Introduction in WPF"/>
         <Button Grid.Column="1" Grid.Row="0" Click="Button_Login">Log In</Button>
-        <Button Grid.Column="1" Grid.Row="1">Hint</Button>
+        <Button Grid.Column="1" Grid.Row="1" Click="Button_Hint">Hint</Button>
         <Button Grid.Column="0" Grid.Row="1" Name="dontClickMeButton" HorizontalAlignment="Center" VerticalAlignment="Bottom" Click="Button_DontClickMe">Don't click me!</Button>
         <CheckBox Name="eventsCheckBox" Content="Activate events" HorizontalAlignment="Left" Margin="326,20,0,0" VerticalAlignment="Top" Checked="CheckBox_Events" IsChecked="False" Unchecked="UncheckBox_Events"/>
+        <Label Name="bunVenit" Content="" HorizontalAlignment="Left" Margin="0,83,0,0" VerticalAlignment="Top"/>
+        <Image Name="logo" HorizontalAlignment="Left" Height="179" Margin="23,10,0,0" VerticalAlignment="Top" Width="177" Source="Desktop/Logo.png" Grid.Row="1"/>
     </Grid>
 </Window>
