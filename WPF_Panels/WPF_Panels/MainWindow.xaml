@@ -8,6 +8,18 @@
         Title="MainWindow" Height="450" Width="800">
 
     <Grid>
-        <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="50" Text="Hello, world!"/>
+        <TextBlock VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="30" Text="Introduction in WPF"/>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*" />
+            <ColumnDefinition Width="1*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+        </Grid.RowDefinitions>
+        <Button Grid.Column="1" Grid.Row="0">Log In</Button>
+        <Button Grid.Column="1" Grid.Row="1">Hint</Button>
+        <Button Grid.Column="0" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Bottom">Don't click me!</Button>
     </Grid>
 </Window>
