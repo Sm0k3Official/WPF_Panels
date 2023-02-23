@@ -8,8 +8,6 @@
         Title="MainWindow" Height="450" Width="800">
 
     <Grid>
-        <TextBlock VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="30" Text="Introduction in WPF"/>
-
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="3*" />
             <ColumnDefinition Width="1*" />
@@ -18,8 +16,10 @@
             <RowDefinition Height="1*" />
             <RowDefinition Height="1*" />
         </Grid.RowDefinitions>
-        <Button Grid.Column="1" Grid.Row="0">Log In</Button>
+        <TextBlock VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="30" Text="Introduction in WPF"/>
+        <Button Grid.Column="1" Grid.Row="0" Click="Button_Login">Log In</Button>
         <Button Grid.Column="1" Grid.Row="1">Hint</Button>
-        <Button Grid.Column="0" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Bottom">Don't click me!</Button>
+        <Button Grid.Column="0" Grid.Row="1" Name="dontClickMeButton" HorizontalAlignment="Center" VerticalAlignment="Bottom" Click="Button_DontClickMe">Don't click me!</Button>
+        <CheckBox Name="eventsCheckBox" Content="Activate events" HorizontalAlignment="Left" Margin="326,20,0,0" VerticalAlignment="Top" Checked="CheckBox_Events" IsChecked="False" Unchecked="UncheckBox_Events"/>
     </Grid>
 </Window>
