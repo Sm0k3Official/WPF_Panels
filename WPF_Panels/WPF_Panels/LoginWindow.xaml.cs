@@ -28,21 +28,35 @@ namespace WPF_Panels
         }
         public void DisplayLogo()
         {
-            mainWindow.bunVenit.Content = "Bun venit in echipa noastra, \n" + username.Text.ToString()+"\n\n\n\n Acesta este logo-ul companiei:";
-            BitmapImage image = new BitmapImage(new Uri("D:\\Facultate\\Anul_2\\Sem2\\Medii vizuale de programare\\WPF_Panels\\Logo.png", UriKind.Absolute));
+            mainWindow.usernameLabel.Content = username.Text.ToString();
+            //+"Acesta este logo-ul companiei:";
+            BitmapImage image = new BitmapImage(new Uri("\\Resources\\Logo.png", UriKind.Relative)); 
             mainWindow.logo.Source = image;
         }
+
         private void OK_Click(object sender, RoutedEventArgs e)
         {
             if(username.Text!="" && parola.Password.ToString()!="")
             {
                 DisplayLogo();
                 this.Close();
+                    
+                mainWindow.loginButton.IsEnabled = false;
+                mainWindow.logoutButton.IsEnabled = true;
+
+                mainWindow.dontClickMeButton.Visibility = Visibility.Visible;
+                mainWindow.eventsCheckBox.Visibility = Visibility.Visible;
+                mainWindow.bunVenitLabel.Visibility = Visibility.Visible;
             }
             else
             {
                 mesaj.Content = "Date insuficiente!";
             }
+        }
+
+        private void CommandBinding_Executed(object sender, ExecutedRoutedEventArgs e)
+        {
+            OK_Click(sender, e);
         }
     }
 }

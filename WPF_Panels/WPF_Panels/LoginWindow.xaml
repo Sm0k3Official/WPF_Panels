@@ -5,15 +5,32 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPF_Panels"
         mc:Ignorable="d"
-        Title="LoginWindow" Height="450" Width="800">
-    <Grid>
-        <TextBox Name="username" HorizontalAlignment="Left" Margin="10,46,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Label Content="Username&#xD;&#xA;" HorizontalAlignment="Left" Margin="5,25,0,0" VerticalAlignment="Top"/>
-        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Completeaza casutele cu datele personale" VerticalAlignment="Top"/>
-        <Label Content="Parola&#xD;&#xA;" HorizontalAlignment="Left" Margin="5,64,0,0" VerticalAlignment="Top"/>
-        <PasswordBox Name="parola" HorizontalAlignment="Left" Margin="10,85,0,0" VerticalAlignment="Top" Width="120"/>
-        <Button Name="ok" Content="OK" HorizontalAlignment="Left" Margin="90,119,0,0" VerticalAlignment="Top" Click="OK_Click" Width="40"/>
-        <Label Name="mesaj" Content="" HorizontalAlignment="Left" Margin="16,146,0,0" VerticalAlignment="Top"/>
+        ResizeMode="NoResize"
+        Title="LoginWindow" Height="230" Width="250"
+        WindowStartupLocation="CenterScreen">
+    <Window.InputBindings>
+        <KeyBinding Command="ApplicationCommands.Close" Key="Enter" />
+    </Window.InputBindings>
 
+    <Window.CommandBindings>
+        <CommandBinding Command="ApplicationCommands.Close" Executed="CommandBinding_Executed" />
+    </Window.CommandBindings>
+    <Grid>
+        <TextBox Name="username" HorizontalAlignment="Center" Margin="0,55,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Username&#xD;&#xA;" HorizontalAlignment="Center" Margin="0,29,0,0" VerticalAlignment="Top" Height="26"/>
+        <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="Completeaza casutele cu datele personale" VerticalAlignment="Top"/>
+        <Label Content="Parola&#xD;&#xA;" HorizontalAlignment="Center" Margin="0,72,0,0" VerticalAlignment="Top" Height="24" RenderTransformOrigin="0.5,0.5" Width="62" HorizontalContentAlignment="Center">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleY="-0.257"/>
+                    <RotateTransform/>
+                    <TranslateTransform Y="-0.096"/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+        <PasswordBox Name="parola" HorizontalAlignment="Center" Margin="0,97,0,0" VerticalAlignment="Top" Width="120"/>
+        <Button Name="ok" Content="OK" HorizontalAlignment="Center" Margin="0,128,0,0" VerticalAlignment="Top" Click="OK_Click" Width="40"/>
+        <Label Name="mesaj" Content="" HorizontalAlignment="Center" Margin="0,160,0,0" VerticalAlignment="Top" Width="126" HorizontalContentAlignment="Center"/>
     </Grid>
 </Window>

@@ -24,13 +24,17 @@ namespace WPF_Panels
 
         private DontClickMeWindow dontClickMeWindow;
         private LoginWindow loginWindow;
-        private HintWindow hintWindow;
 
         public MainWindow()
         {
             InitializeComponent();
 
             areEventsChecked = false;
+            logoutButton.IsEnabled = false;
+
+            dontClickMeButton.Visibility = Visibility.Hidden;
+            eventsCheckBox.Visibility = Visibility.Hidden;
+            bunVenitLabel.Visibility = Visibility.Hidden;
         }
 
         //Don't click me methods
@@ -71,13 +75,13 @@ namespace WPF_Panels
         private void Button_Login(object sender, RoutedEventArgs e)
         {
             loginWindow = new LoginWindow(this);
-            loginWindow.Show();
+            loginWindow.ShowDialog();
         }
+
         //Hint methods
-        private void Button_Hint(object sender, RoutedEventArgs e)
+        private void Button_Logout(object sender, RoutedEventArgs e)
         {
-            hintWindow = new HintWindow();
-            hintWindow.Show();
+            this.Close();
         }
     }
 }
