@@ -12,24 +12,35 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace WPF_Panels
+namespace WPF_Panels.Windows.Panels
 {
     /// <summary>
-    /// Interaction logic for DontClickMeWindow.xaml
+    /// Interaction logic for DockPanelWindow.xaml
     /// </summary>
-    public partial class DontClickMeWindow : Window
+    public partial class DockPanelWindow : Window
     {
-        public bool IsClosed { private set; get; }
-        public DontClickMeWindow()
+        private Button button;
+
+        public DockPanelWindow(Button button)
         {
             InitializeComponent();
-            IsClosed = false;
+
+            this.button = button;
+            button.IsEnabled = false;
+        }
+
+        private void backButton_Click(object sender, RoutedEventArgs e)
+        {
+            button.IsEnabled = false;
+
+            this.Close();
         }
 
         protected override void OnClosed(EventArgs e)
         {
             base.OnClosed(e);
-            IsClosed = true;
+
+            button.IsEnabled = true;
         }
     }
 }

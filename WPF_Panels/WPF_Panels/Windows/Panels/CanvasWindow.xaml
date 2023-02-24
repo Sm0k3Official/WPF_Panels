@@ -1,0 +1,21 @@
+﻿<Window x:Class="WPF_Panels.Panels.CanvasWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF_Panels.Panels"
+        mc:Ignorable="d"
+        MinHeight="300" MinWidth="300"
+        Title="CanvasWindow" Height="300" Width="300"
+        WindowStartupLocation="CenterScreen">
+    <Canvas>
+        <Rectangle Name="lightCoralRectangle" Fill="LightCoral" Panel.ZIndex="1" Canvas.Left="130" Canvas.Top="130" Width="50" Height="50" />
+        <Rectangle Name="lightBlueRectangle" Fill="LightBlue" Panel.ZIndex="2" Canvas.Left="110" Canvas.Top="110" Width="50" Height="50" />
+        <Rectangle Name="lightCyanRectangle" Fill="LightCyan" Panel.ZIndex="3" Canvas.Left="90" Canvas.Top="90" Width="50" Height="50" />
+        
+        <Button Name="backButton" Canvas.Left="10" Canvas.Top="10" Click="backButton_Click">Back to panels</Button>
+        <Button Name="cyanButton" Canvas.Right="10" Canvas.Top="10" Click="cyanButton_Click">Light Cyan</Button>
+        <Button Name="blueButton" Canvas.Left="10" Canvas.Bottom="10" Click="blueButton_Click">Light blue</Button>
+        <Button Name="coralButton" Canvas.Right="10" Canvas.Bottom="10" Click="coralButton_Click">Light Coral</Button>
+    </Canvas>
+</Window>

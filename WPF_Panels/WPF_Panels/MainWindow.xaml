@@ -5,25 +5,29 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPF_Panels"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800"
+        MinHeight="450" MinWidth="800"
+        Title="MainWindow" Height="500" Width="900"
         WindowStartupLocation="CenterScreen">
-
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="3*" />
+            <ColumnDefinition Width="1*" />
             <ColumnDefinition Width="1*" />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="1*" />
             <RowDefinition Height="1*" />
         </Grid.RowDefinitions>
-        <TextBlock VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="30" Text="Introduction in WPF"/>
-        <Button Grid.Column="1" Grid.Row="0" Name="loginButton" Click="Button_Login">Log In</Button>
-        <Button Grid.Column="1" Grid.Row="1" Name="logoutButton"  Click="Button_Logout">Logout</Button>
-        <Button Grid.Column="0" Grid.Row="1" Name="dontClickMeButton" HorizontalAlignment="Center" VerticalAlignment="Bottom" Click="Button_DontClickMe">Don't click me!</Button>
-        <CheckBox Name="eventsCheckBox" Content="Activate events" HorizontalAlignment="Left" Margin="326,20,0,0" VerticalAlignment="Top" Checked="CheckBox_Events" IsChecked="False" Unchecked="UncheckBox_Events"/>
-        <Label Name="bunVenitLabel" Content="Bun venit in echipa noastra," HorizontalAlignment="Left" Margin="0,83,0,0" VerticalAlignment="Top"/>
-        <Image Name="logo" HorizontalAlignment="Left" Height="179" Margin="23,10,0,0" VerticalAlignment="Top" Width="177" Source="Desktop/Logo.png" Grid.Row="1"/>
-        <Label Name="usernameLabel" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,98,0,0" FontWeight="Bold"/>
+        <TextBlock VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="30" Text="Introduction in WPF"/>
+
+        <Label Grid.Column="0" Grid.Row="0" Name="bunVenitLabel" Content="Bun venit in echipa noastra," HorizontalAlignment="Left" Margin="0,83,0,0" VerticalAlignment="Top"/>
+        <Label Grid.Column="0" Grid.Row="0" Name="usernameLabel" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,109,0,0" FontWeight="Bold" Width="78"/>
+        <Image Grid.Column="0" Grid.Row="1" Name="logoImage" HorizontalAlignment="Center" VerticalAlignment="Center" />
+
+        <CheckBox Grid.Column="1" Grid.Row="0" Name="eventsCheckBox" Content="Activate events" HorizontalAlignment="Center" VerticalAlignment="Top" Checked="CheckBox_Events" IsChecked="False" Unchecked="UncheckBox_Events"/>
+        <Button Grid.Column="1" Grid.Row="1" Name="dontClickMeButton" HorizontalAlignment="Center" VerticalAlignment="Bottom" Click="Button_DontClickMe">Don't click me!</Button>
+
+        <Button Grid.Column="2" Grid.Row="0" Name="loginButton" Click="Button_Login">Log In</Button>
+        <Button Grid.Column="2" Grid.Row="1" Name="logoutButton"  Click="Button_Logout">Logout</Button>
     </Grid>
 </Window>

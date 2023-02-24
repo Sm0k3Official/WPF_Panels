@@ -18,7 +18,7 @@ namespace WPF_Panels
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainWindow : Window, IWindow
     {
         private bool areEventsChecked { set; get; }
 
@@ -37,17 +37,32 @@ namespace WPF_Panels
             bunVenitLabel.Visibility = Visibility.Hidden;
         }
 
+        public void CloseAllWindows()
+        {
+            if (dontClickMeWindow != null && dontClickMeWindow.IsEnabled)
+            {
+                dontClickMeWindow.Close();
+            }
+
+            if (loginWindow != null && loginWindow.IsEnabled)
+            {
+                loginWindow.Close();
+            }
+        }
+
         //Don't click me methods
         private void Button_DontClickMe(object sender, RoutedEventArgs e)
         {
-            dontClickMeWindow = new DontClickMeWindow();
+            dontClickMeWindow = new DontClickMeWindow(this);
 
-            if(areEventsChecked)
+            if (areEventsChecked)
             {
                 dontClickMeWindow.Closed += DontClickMeWindow_Closed;
                 dontClickMeWindow.Show();
 
                 dontClickMeButton.IsEnabled = false;
+
+                this.Hide();
             }
             else 
             {
@@ -78,10 +93,19 @@ namespace WPF_Panels
             loginWindow.ShowDialog();
         }
 
-        //Hint methods
+        //Logout methods
         private void Button_Logout(object sender, RoutedEventArgs e)
         {
+            CloseAllWindows();
+
             this.Close();
+        }
+
+        protected override void OnClosed(EventArgs e)
+        {
+            CloseAllWindows();
+
+            base.OnClosed(e);
         }
     }
 }

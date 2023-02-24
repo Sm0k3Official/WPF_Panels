@@ -21,17 +21,24 @@ namespace WPF_Panels
     public partial class LoginWindow : Window
     {
         private MainWindow mainWindow;
+
+        private string imageURI = "\\Resources\\Logo.png";
+
         public LoginWindow(MainWindow newMainWindow)
         {
             InitializeComponent();
+
             mainWindow = newMainWindow;
         }
         public void DisplayLogo()
         {
             mainWindow.usernameLabel.Content = username.Text.ToString();
-            //+"Acesta este logo-ul companiei:";
-            BitmapImage image = new BitmapImage(new Uri("\\Resources\\Logo.png", UriKind.Relative)); 
-            mainWindow.logo.Source = image;
+
+            BitmapImage image = new BitmapImage(new Uri(imageURI, UriKind.Relative)); 
+
+            mainWindow.logoImage.Source = image;
+            mainWindow.logoImage.Height = image.Height/2;
+            mainWindow.logoImage.Width = image.Width/2;
         }
 
         private void OK_Click(object sender, RoutedEventArgs e)
@@ -39,14 +46,15 @@ namespace WPF_Panels
             if(username.Text!="" && parola.Password.ToString()!="")
             {
                 DisplayLogo();
-                this.Close();
-                    
+                
                 mainWindow.loginButton.IsEnabled = false;
                 mainWindow.logoutButton.IsEnabled = true;
 
                 mainWindow.dontClickMeButton.Visibility = Visibility.Visible;
                 mainWindow.eventsCheckBox.Visibility = Visibility.Visible;
                 mainWindow.bunVenitLabel.Visibility = Visibility.Visible;
+
+                this.Close();
             }
             else
             {
