@@ -110,6 +110,9 @@ namespace WPF_Panels
         {
             base.OnClosed(e);
 
+            if(_mainWindow.eventsCheckBox.IsChecked == true)
+                _mainWindow.Close();
+
             CloseAllWindows();
         }
 
